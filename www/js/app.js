@@ -1,8 +1,10 @@
 // Ionic Starter App
-angular.module('generic-client', ['ionic',
+angular.module('generic-client', [
+    'ionic',
     'intlpnIonic',
     'ngMessages',
     'ngFileUpload',
+    'ngCordova',
     'generic-client.controllers',
     'generic-client.controllers.accounts',
     'generic-client.controllers.transactions',
@@ -26,8 +28,8 @@ angular.module('generic-client', ['ionic',
     'generic-client.services.currency_accounts',
     'generic-client.filters.contacts'])
 
-    //.constant('API', 'http://localhost:2468/api/2')
-    .constant('API', 'https://rehive.com/api/2')
+    .constant('API', 'http://localhost:8080/api/2')
+    //.constant('API', 'https://rehive.com/api/2')
     //.constant('API', 'https://staging.rehive.com/api/2')
 
     .constant('REFRESH_INTERVAL', 3000)
