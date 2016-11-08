@@ -46,15 +46,11 @@ angular.module('generic-client.controllers.fica', [])
             }
         };
 
-        // upload on file select or drop
-        $scope.upload = function (file) {
-
-        };
-
-        $scope.getPicture = function (file) {
+        $scope.getFile = function () {
             'use strict';
-            document.addEventListener("deviceready", function () {
-                if (ionic.Platform.isIOS()) {
+
+            if (ionic.Platform.isIOS()) {
+                document.addEventListener("deviceready", function () {
                     var ios_options = {
                         quality: 100,
                         destinationType: Camera.DestinationType.DATA_URL,
@@ -68,7 +64,7 @@ angular.module('generic-client.controllers.fica', [])
                     $cordovaCamera.getPicture(ios_options).then(function (file) {
                         Upload.upload({
                             url: API + "/users/document/",
-                            data: {file: file, document_category: "", document_type: ""},
+                            data: {'file': file, 'document_category': "", 'document_type': ""},
                             headers: {'Authorization': 'JWT ' + Auth.getToken()}
                         }).progress(function (evt) {
                             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
@@ -81,7 +77,9 @@ angular.module('generic-client.controllers.fica', [])
                     }, function (err) {
                         window.alert(err);
                     });
-                } else if (ionic.Platform.isAndroid()) {
+                }, false);
+            } else if (ionic.Platform.isAndroid()) {
+                document.addEventListener("deviceready", function () {
                     var android_options = {
                         quality: 100,
                         destinationType: Camera.DestinationType.DATA_URL,
@@ -98,12 +96,11 @@ angular.module('generic-client.controllers.fica', [])
                         });
 
                         var options = {
-                            url: API + "/users/document/",
-                            data: {file: file, document_category: "", document_type: ""},
+                            params: {'document_category': "", 'document_type': ""},
                             headers: {'Authorization': 'JWT ' + Auth.getToken()}
                         };
 
-                        $cordovaFileTransfer.upload(API + '/users/document/', imagePath, options).then(function (result) {
+                        $cordovaFileTransfer.upload(API + '/users/document/', file, options).then(function (result) {
                             $ionicLoading.hide();
                             $ionicPopup.alert({title: "Image Uploaded"});
                         }, function (err) {
@@ -113,27 +110,32 @@ angular.module('generic-client.controllers.fica', [])
                             // constant progress updates
                         });
                     });
-                } else {
-                    $ionicLoading.show({
-                        template: 'Uploading...'
-                    });
-                    Upload.upload({
-                        url: API + "/users/document/",
-                        data: {file: file, document_category: "", document_type: ""},
-                        headers: {'Authorization': 'JWT ' + Auth.getToken()}
-                    }).then(function (resp) {
-                        $ionicLoading.hide();
-                        $ionicPopup.alert({title: "Success", template: "Upload complete."});
-                        console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-                    }, function (resp) {
-                        console.log('Error status: ' + resp.status);
-                    }, function (evt) {
-                        $ionicLoading.hide();
-                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                        console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-                    });
-                }
-            }, false);
+                }, false);
+            } else {
+                document.getElementById('upload').click();
+            }
+        };
+
+        $scope.upload = function (file) {
+            'use strict';
+            $ionicLoading.show({
+                template: 'Uploading...'
+            });
+            Upload.upload({
+                url: API + "/users/document/",
+                data: {file: file, document_category: "", document_type: ""},
+                headers: {'Authorization': 'JWT ' + Auth.getToken()}
+            }).then(function (resp) {
+                $ionicLoading.hide();
+                $ionicPopup.alert({title: "Success", template: "Upload complete."});
+                console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+            }, function (resp) {
+                console.log('Error status: ' + resp.status);
+            }, function (evt) {
+                $ionicLoading.hide();
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+            });
         };
 
     });

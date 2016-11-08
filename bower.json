@@ -7,6 +7,7 @@
     "jquery": "^2.2.4"
   },
   "dependencies": {
-    "ng-file-upload": "^12.2.12"
+    "ng-file-upload": "^12.2.12",
+    "ngCordova": "0.1.27-alpha"
   }
 }
