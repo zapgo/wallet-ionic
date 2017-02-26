@@ -15,13 +15,6 @@
                         </div>
                     </label>
                     <label class="item item-input item-stacked-label">
-                        <span class="input-label" translate="COMPANY"></span>
-                        <input type="text" name="company_id" ng-model="user.company_id" placeholder="{{'COMPANY_PLACEHOLDER' | translate}}" required>
-                        <div ng-messages="loginForm.company_id.$error" role="alert" ng-show='loginForm.$submitted || loginForm.company_id.$dirty'>
-                            <div ng-message="required" class="form-error" translate="COMPANY_REQUIRED_MESSAGE"></div>
-                        </div>
-                    </label>
-                    <label class="item item-input item-stacked-label">
                         <span class="input-label" translate="PASSWORD"></span>
                         <input type="password" name="password" ng-model="user.password" placeholder="{{'PASSWORD_PLACEHOLDER' | translate}}" required>
                         <div ng-messages="loginForm.password.$error" role="alert" ng-show='loginForm.$submitted || loginForm.password.$dirty'>

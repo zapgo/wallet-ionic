@@ -26,7 +26,7 @@
   "UPLOAD": "Upload",
 
   "IDENTIFIER": "Email or mobile number",
-  "IDENTIFIER_PLACEHOLDER": "e.g hello@rehive.com",
+  "IDENTIFIER_PLACEHOLDER": "e.g hello@zapgo.co",
   "IDENTIFIER_REQUIRED_MESSAGE": "Please enter an identifier.",
   "COMPANY": "Company",
   "COMPANY_PLACEHOLDER": "e.g. rehive",
@@ -121,7 +121,7 @@
   "RESET_EMAIL": "Reset email",
 
   "HOME": "Home",
-  "WELCOME_TEXT": "Welcome to Rehive",
+  "WELCOME_TEXT": "Welcome to ZapGo",
   "TRANSACTIONS_TEXT": "Please verify your email address to redeem any unclaimed transactions. Pull to refresh your balance.",
   "TRANSACTION_FEE": "{{ currency }} {{ fee }} Earnings",
   "TRANSACTION_RATE": "{{ from_currency }} {{ from_amount }} to {{ to_currency }} {{ to_amount }}",

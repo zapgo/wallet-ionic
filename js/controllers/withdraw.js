@@ -2,8 +2,7 @@ angular.module('generic-client.controllers.withdraw', [])
 
     .controller('WithdrawToCtrl', function ($scope, $state, $window, $ionicHistory, $stateParams, BitcoinWithdrawalAccount, BankAccount) {
         'use strict';
-        $scope.items = [{'title': 'Bank account', 'accType': 'bank_account'},
-            {'title': 'Bitcoin address', 'accType': 'bitcoin_account'}];
+        $scope.items = [{'title': 'Bank account', 'accType': 'bank_account'}];
         $scope.data = {};
         $scope.accType = $stateParams.accType;
 

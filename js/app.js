@@ -31,7 +31,7 @@ angular.module('generic-client', ['ionic',
 
     //.constant('API', 'http://localhost:8080/api/2')
     .constant('API', 'https://rehive.com/api/2')
-    //.constant('API', 'https://staging.rehive.com/api/2')
+    .constant('COMPANY', 'zapgo')
 
     .constant('REFRESH_INTERVAL', 3000)
 

@@ -60,19 +60,21 @@ angular.module('generic-client.controllers.accounts', [])
                     template: $translate.instant("LOADER_SIGNING_UP")
                 });
 
-                User.register(form.first_name.$viewValue, form.email.$viewValue, form.mobile_number.$viewValue, form.company_id.$viewValue, form.password1.$viewValue, form.password2.$viewValue)
+                User.register(form.first_name.$viewValue, form.email.$viewValue, form.password1.$viewValue, form.password2.$viewValue)
                     .then(function (res) {
                     if (res.status === 201) {
                         $ionicLoading.hide();
                         $rootScope.user = JSON.parse($window.localStorage.getItem('user'));
 
                         // Check if a mobile number was used for registration
-                        if (typeof res.data.user.mobile_number != 'undefined' &&
-                            res.data.user.mobile_number != '') {
-                            $scope.ShowModalVerify()
-                        } else {
-                            $state.go('app.home');
-                        }
+                        //if (typeof res.data.user.mobile_number != 'undefined' &&
+                        //    res.data.user.mobile_number != '') {
+                        //    $scope.ShowModalVerify()
+                        //} else {
+                        //    $state.go('app.home');
+                        //}
+
+                        $state.go('app.home');
                     } else {
                         $ionicPopup.alert({title: $translate.instant("ERROR"), template: res.data.message});
                     }
@@ -92,7 +94,7 @@ angular.module('generic-client.controllers.accounts', [])
                     template: $translate.instant("LOADER_LOGGING_IN")
                 });
 
-                User.login(form.identifier.$viewValue, form.company_id.$viewValue, form.password.$viewValue).then(function (res) {
+                User.login(form.identifier.$viewValue, form.password.$viewValue).then(function (res) {
                     $ionicLoading.hide();
                     $rootScope.user = JSON.parse($window.localStorage.getItem('user'));
 
@@ -137,7 +139,7 @@ angular.module('generic-client.controllers.accounts', [])
 
                 $scope.CloseModalForgot();
 
-                User.resetPassword(form.identifier.$viewValue, form.company_id.$viewValue).then(function (res) {
+                User.resetPassword(form.identifier.$viewValue).then(function (res) {
                     $ionicLoading.hide();
 
                     if (res.status === 200) {

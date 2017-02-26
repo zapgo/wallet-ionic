@@ -4,7 +4,15 @@
             <div class="row row-center">
                 <div class="col col-center">
                     <div class="text-center">
-                        <img class="circle-base profile-image-edit" ng-src="{{ user.profile || 'img/profile_2.png' }}" ng-click="getFile()"/>
+                        <div ng-if="!user.profile">
+                            <button class="button button-icon ion-camera larger-icon" ng-click="getFile()">
+                            </button>
+                        </div>
+                        <div ng-if="user.profile">
+                            <img class="circle-base profile-image-edit"
+                                 ng-src="{{ user.profile }}"
+                                 ng-click="getFile()"/>
+                        </div>
                     </div>
 
                     <!-- Hidden button for PC uploads-->
