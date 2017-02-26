@@ -19,16 +19,16 @@
                         <div ng-message="email" class="form-error" translate="EMAIL_VALID_MESSAGE"></div>
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label" translate="MOBILE"></span>
-                    <input ng-model="user.mobile_number" type="text" name="mobile_number"
-                           placeholder="{{'MOBILE_PLACEHOLDER' | translate}}" required>
+                <!--<label class="item item-input item-stacked-label">-->
+                    <!--<span class="input-label" translate="MOBILE"></span>-->
+                    <!--<input ng-model="user.mobile_number" type="text" name="mobile_number"-->
+                           <!--placeholder="{{'MOBILE_PLACEHOLDER' | translate}}" required>-->
 
-                    <div ng-messages="signupForm.mobile_number.$error" role="alert"
-                         ng-show='signupForm.$submitted || signupForm.mobile_number.$dirty'>
-                        <div ng-message="required" class="form-error" translate="MOBILE_REQUIRED_MESSAGE"></div>
-                    </div>
-                </label>
+                    <!--<div ng-messages="signupForm.mobile_number.$error" role="alert"-->
+                         <!--ng-show='signupForm.$submitted || signupForm.mobile_number.$dirty'>-->
+                        <!--<div ng-message="required" class="form-error" translate="MOBILE_REQUIRED_MESSAGE"></div>-->
+                    <!--</div>-->
+                <!--</label>-->
                 <label class="item item-input item-stacked-label">
                     <span class="input-label" translate="FIRST_NAME"></span>
                     <input ng-model="user.first_name" type="text" name="first_name"
@@ -37,16 +37,6 @@
                     <div ng-messages="signupForm.first_name.$error" role="alert"
                          ng-show='signupForm.$submitted || signupForm.first_name.$dirty'>
                         <div ng-message="required" class="form-error" translate="FIRST_NAME_REQUIRED_MESSAGE"></div>
-                    </div>
-                </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label" translate="COMPANY"></span>
-                    <input ng-model="user.company_id" type="text" name="company_id"
-                           placeholder="{{'COMPANY_PLACEHOLDER' | translate}}" required>
-
-                    <div ng-messages="signupForm.company_id.$error" role="alert"
-                         ng-show='signupForm.$submitted || signupForm.company_id.$dirty'>
-                        <div ng-message="required" class="form-error" translate="COMPANY_REQUIRED_MESSAGE"></div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">

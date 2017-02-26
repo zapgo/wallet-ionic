@@ -18,16 +18,6 @@
                         <div ng-message="required" class="form-error" translate="IDENTIFIER_REQUIRED_MESSAGE"></div>
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label" translate="COMPANY"></span>
-                    <input ng-model="user.company_id" type="text" name="company_id"
-                           placeholder="{{'COMPANY_PLACEHOLDER' | translate}}" required>
-
-                    <div ng-messages="forgotForm.company_id.$error" role="alert"
-                         ng-show='forgotForm.$submitted || forgotForm.company_id.$dirty'>
-                        <div ng-message="required" class="form-error" translate="COMPANY_REQUIRED_MESSAGE"></div>
-                    </div>
-                </label>
             </div>
         </ion-content>
         <!-- Footer bar hack to get layout right -->

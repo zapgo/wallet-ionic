@@ -25,7 +25,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //------------------------------------------
 
 // Main Color for elements
-$primary: #3D8AB8;
+$primary: #F3794D;
 //Default: #56C1ED;
 
 // Color of fonts/icons within primary color
@@ -37,7 +37,7 @@ $tertiary: #F6F6F6;
 //Default: #fff;
 
 // Side bar
-$sidebar: #2070A0;
+$sidebar: #f38258;
 $background: #F6F6F6;
 
 // Notification colors
@@ -534,4 +534,8 @@ input.ng-invalid, input.ng-dirty {
 
 img-crop {
   position: absolute;
+}
+
+.larger-icon {
+    font-size: 127px;
 }
