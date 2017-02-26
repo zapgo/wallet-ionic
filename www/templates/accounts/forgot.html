@@ -10,7 +10,7 @@
             <div class="list">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label" translate="IDENTIFIER"></span>
-                    <input type="text" name="identifier"
+                    <input type="text" name="identifier" ng-model="user.email"
                            placeholder="{{'IDENTIFIER_PLACEHOLDER' | translate}}" required>
 
                     <div ng-messages="forgotForm.identifier.$error" role="alert"
