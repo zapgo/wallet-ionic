@@ -539,3 +539,11 @@ img-crop {
 .larger-icon {
     font-size: 127px;
 }
+
+// Selectable text
+.select-body {
+  -webkit-user-select: auto !important;
+  .scroll {
+    -webkit-user-select: inherit;
+  }
+}

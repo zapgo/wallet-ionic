@@ -10055,3 +10055,8 @@ img-crop {
 
 .larger-icon {
   font-size: 127px; }
+
+.select-body {
+  -webkit-user-select: auto !important; }
+  .select-body .scroll {
+    -webkit-user-select: inherit; }
