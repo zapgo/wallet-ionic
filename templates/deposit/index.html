@@ -1,5 +1,5 @@
 <ion-view view-title="{{'DEPOSIT' | translate}}">
-    <ion-content class="container-body select-body" data-tap-disabled="true">
+    <ion-content class="container-body">
         <div class="container-default-background text-center">
             <div class="row">
                 <div class="col col-100">
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div ng-if="reference" class="container-deposit-reference text-center">
+        <div ng-if="reference" class="container-deposit-reference text-center select-body" data-tap-disabled="true">
             <h4 class="capital-letter">{{ reference }}</h4>
         </div>
         <div class="container-default">
